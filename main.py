@@ -41,6 +41,10 @@ def main():
             
         updatable.update(dt) # iterates automatically over evvery object in the group and applies their update method
 
+        for obj in asteroids:
+            if obj.check_collision(player):
+                raise SystemExit("Game over!")
+
         screen.fill("black")
 
         # draws the every object in the group
